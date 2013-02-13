@@ -1,0 +1,41 @@
+		#region Constructor, Fields, Properties, JSON Methods
+		#region Fields
+		
+		[fields]
+		
+		#endregion
+
+		#region Properties
+		
+[properties]
+		
+		#endregion
+
+		#region Constructors
+
+		public [classname]()
+		{
+		}
+		
+		public [classname]([fieldlistparams])
+		{
+			[fieldparamassignments]
+		}
+		
+		public [classname](IDataReader reader)
+		{
+			[rowassigns]
+		}
+
+		#endregion
+		
+		#region Clone
+		public [classname] Clone()
+		{
+			[classname] copy = new [classname]();
+[fieldcopies]
+			return copy;
+		}
+		#endregion
+[jsonmethods]
+		#endregion

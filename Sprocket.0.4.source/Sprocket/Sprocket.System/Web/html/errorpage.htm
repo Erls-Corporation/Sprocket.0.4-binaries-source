@@ -1,0 +1,80 @@
+<html>
+<head>
+<title>Critical Error</title>
+<style type="text/css">
+body {
+	font-family: verdana;
+	font-size: 0.7em;
+}
+
+#container {
+	position: absolute;
+	width: 500px;
+	top: 10px;
+	left: 50%;
+	margin-left: -250px;
+	border: 1px solid maroon;
+	background-color: #ffe;
+}
+
+h1 {
+	margin: 0;
+	padding: 10px;
+	font-size: 1.5em;
+	font-weight: bold;
+	color: red;
+	background-color: yellow;
+	border-bottom: 1px solid maroon;
+}
+
+h2 {
+	margin: 0 0 4px 0;
+	padding: 8px;
+	font-size: 1.2em;
+	font-weight: bold;
+	border-top: 1px solid maroon;
+	background-color: #ddc;
+}
+
+h3 {
+	margin: 0 0 8px 0;
+	font-size: 10pt;
+	font-weight: bold;
+}
+
+ul {
+	padding-top: 4px;
+	padding-bottom: 4px;
+	padding-left: 4px;
+	margin: 0;
+	margin-left: expression('2.1em');
+	padding-left: 4px;
+}
+
+li {
+	margin: 0 0 8px 0;
+}
+
+p {
+	background-color: maroon;
+	font-weight: bold;
+	padding: 10px;
+	color: yellow;
+	margin: 0
+}
+
+.ModuleName {
+	color: darkblue;
+}
+</style>
+</head>
+<body>
+<div id="container">
+	<h1>One or more critical errors has occurred</h1>
+	<p>Sprocket has been successfully installed, but there are one or more issues
+		that you need to attend to before Sprocket can finish setting itself up. Most issues are
+		related to values in the Web.config file, which is located in the root folder for Sprocket.</p>
+	{body}
+</div>
+</body>
+</html>

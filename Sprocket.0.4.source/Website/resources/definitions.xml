@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+	This is your definitions file for use by the CMS Module found in Sprocket.Web.CMS. For information
+	about how to use this file, see http://code.google.com/p/sprocketcms/wiki/BasicWebsiteConstruction
+-->
+<Definitions>
+	<Pages>
+		<Page Code="home" Path="" Template="master" />
+		<Page Code="test" Path="test-subpage" Template="subpage" />
+	</Pages>
+	<Templates>
+		<Template Name="master" File="resources/html/master-template.htm" />
+		<Template Name="subpage" Master="master">
+			<Replace Section="Main Content" File="resources/html/subpage.htm" />
+			<Replace Section="Extra Head Sections" File="resources/html/subpage-head.htm" />
+		</Template>
+	</Templates>
+</Definitions>

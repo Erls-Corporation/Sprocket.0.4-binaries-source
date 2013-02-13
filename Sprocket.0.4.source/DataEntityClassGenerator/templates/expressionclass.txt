@@ -1,0 +1,81 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Web;
+
+using Sprocket;
+using Sprocket.Web;
+using Sprocket.Web.CMS;
+using Sprocket.Security;
+using Sprocket.Web.CMS.Content;
+using Sprocket.Web.CMS.Script;
+using Sprocket.Web.CMS.Script.Parser;
+
+namespace [namespace]
+{
+	public class [classname]Expression : IObjectExpression, IVariableObject
+	{
+		private PropertyType propertyType = PropertyType.None;
+		private List<FunctionArgument> args = null;
+		private [classname] [lesserclassname] = null;
+
+		public bool PresetPropertyName(Token propertyToken, List<Token> tokens, ref int nextIndex)
+		{
+			switch (propertyToken.Value)
+			{
+				[prepareproperty_casestatements]
+				default: return false;
+			}
+		}
+
+		public void SetFunctionArguments(List<FunctionArgument> arguments, Token functionCallToken)
+		{
+			args = arguments;
+			if(args.Count != 1)
+				throw new TokenParserException("An argument was expected specifying which \"[classname_lower]\" to load.", functionCallToken);
+		}
+
+		public object Evaluate(ExecutionState state)
+		{
+			#error The following section should be changed/checked to match your code
+			// attempt to load the specified [classname]
+			object value = TokenParser.VerifyUnderlyingType(args[0].Expression.Evaluate(state));
+			if(value is decimal)
+				[lesserclassname] = DataLayer.Select[classname](Convert.ToInt64(value));
+			else
+				throw new InstructionExecutionException("Could not load an instance of \"[classname_lower]\" because the argument did not equate to the right kind of value.", args[0].Token);
+			
+			// return the relevant value
+			switch(propertyType)
+			{
+				[evaluate_casestatements]
+				case PropertyType.None: return [lesserclassname] == null ? null : this;
+				default: return "[[classname]]";
+			}
+		}
+
+		public void PrepareExpression(Token expressionToken, List<Token> tokens, ref int nextIndex, Stack<int?> precedenceStack)
+		{
+		}
+
+		public object EvaluateVariableProperty(string propertyName, Token propertyToken, ExecutionState state)
+		{
+			switch(propertyName)
+			{
+				[evaluateproperty_casestatements]
+				default:
+					throw new InstructionExecutionException("\"" + propertyName + "\" is not a property of this variable.", propertyToken);
+			}
+		}
+
+		enum PropertyType
+		{
+			None[propertytypes]
+		}
+	}
+	public class [classname]ExpressionCreator : IExpressionCreator
+	{
+		public string Keyword { get { return "[classname_lower]"; } }
+		public IExpression Create() { return new [classname]Expression(); }
+	}
+}

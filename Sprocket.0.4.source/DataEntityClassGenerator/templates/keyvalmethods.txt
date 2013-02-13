@@ -1,0 +1,45 @@
+
+		/// <summary>
+		/// Populates the class fields with values derived from strings. Use this method
+		/// to take a list of string values from a fieldname/value collection and assign
+		/// them to their native fields in the class.
+		/// </summary>
+		public void Populate(IDictionary values)
+		{
+			foreach (object key in values.Keys)
+				Populate(key.ToString(), values[key].ToString());
+		}
+
+		/// <summary>
+		/// Populates the class fields with values derived from strings. Use this method
+		/// to take a list of string values from a fieldname/value collection and assign
+		/// them to their native fields in the class.
+		/// </summary>
+		public void Populate(NameValueCollection values)
+		{
+			foreach (string key in values.Keys)
+				Populate(key, values[key].ToString());
+		}
+
+		/// <summary>
+		/// Populates the class fields with values derived from strings. Use this method
+		/// to take a list of string values from a fieldname/value collection and assign
+		/// them to their native fields in the class.
+		/// </summary>
+		public bool Populate(string fieldName, string value)
+		{
+			switch (fieldName)
+			{
+[case-statements]
+				default:
+					return false;
+			}
+		}
+		
+		private DateTime ParseDateTime(string value)
+		{
+			string fmt = "HH:mm:ss MMM dd, yyyy";
+			if (value.Length > 4 && value[value.Length - 4] == ' ')
+				fmt += value.Substring(value.Length - 4, 4);
+			return DateTime.ParseExact(value, new string[] { fmt, "r", "u", "s", "U", "y" }, new CultureInfo("en-US", true), DateTimeStyles.None);
+		}		

@@ -1,0 +1,23 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+	<!-- for help with the SprocketScript syntax in this file, see http://code.google.com/p/sprocketcms/wiki/SprocketScript -->
+    <title>Sprocket Sample Website - {?@ "Title" }Home{? end }</title>
+    {?@ "Extra Head Sections"; }
+</head>
+<body>
+	<h1>Sprocket Sample Website</h1>
+	<strong>Current Page: </strong> Code - "{?? page:code }", Path - {? if page:path is "" show "(empty)" else show "&quot;" + page:path + "&quot;" end }
+	<hr />
+	<ul>
+	<li><a href="{??basepath}sysinfo/">View Sprocket System Information</a> - This is a special feature provided by Sprocket.</li>
+	<li><a href="{??basepath}admin/">Sprocket's Admin System</a> - Takes you to the current version of the Sprocket admin system.
+		Please note that this will be getting an overhaul soon to bring it into line with the changes made since Sprocket v0.3.</li>
+	</ul>
+	<hr />
+	{? section "Main Content"}
+		This is the main page of the Sprocket website. This sample website will be made bigger and demonstrate Sprocket's features
+		better soon. <a href="{??basepath}{??page("test"):path}/">This is a link to a single subpage defined in the definitions.xml file</a>.
+	{? end }
+</body>
+</html>

@@ -1,0 +1,8 @@
+		///<summary>
+		///Gets or sets the value for [propertyname]
+		///</summary>
+		public [datatype] [propertyname]
+		{
+			get { return [fieldname]; }
+			set { [fieldname] = value; }
+		}

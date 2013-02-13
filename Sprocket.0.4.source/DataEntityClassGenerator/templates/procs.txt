@@ -1,0 +1,51 @@
+IF OBJECT_ID(N'dbo.[classname]_Store') IS NOT NULL
+	DROP PROCEDURE [classname]_Store
+go
+CREATE PROCEDURE dbo.[classname]_Store
+	[insertparameters]
+AS
+BEGIN
+	IF NOT EXISTS (SELECT [primarykey] FROM [tablename] WHERE [primarykey] = @[primarykey])
+	BEGIN
+		IF @[primarykey] = 0 OR @[primarykey] IS NULL
+			EXEC GetUniqueID @[primarykey] OUTPUT
+		INSERT INTO [tablename]
+			([fieldnames])
+		VALUES
+			([fieldvalues])
+	END
+	ELSE
+	BEGIN
+		UPDATE [tablename] SET
+			[updateexplicitsets]
+		WHERE [primarykey] = @[primarykey]
+	END
+END
+go
+
+IF OBJECT_ID(N'dbo.[classname]_Select') IS NOT NULL
+	DROP PROCEDURE [classname]_Select
+go
+CREATE PROCEDURE dbo.[classname]_Select
+	@[primarykey] [primarykeytype]
+AS
+BEGIN
+	SELECT *
+	  FROM [tablename]
+	 WHERE [primarykey] = @[primarykey]
+END
+
+go
+
+IF OBJECT_ID(N'dbo.[classname]_Delete') IS NOT NULL
+	DROP PROCEDURE [classname]_Delete
+go
+CREATE PROCEDURE dbo.[classname]_Delete
+	@[primarykey] [primarykeytype]
+AS
+BEGIN
+	DELETE
+	  FROM [tablename]
+	 WHERE [primarykey] = @[primarykey]
+END
+go

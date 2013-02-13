@@ -1,0 +1,85 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+	<head>
+		<style type="text/css">
+			body {
+				font-family: verdana;
+				font-size: 8pt;
+				margin: 0;
+			}
+			
+			h1 {
+				margin: 0;
+				color: yellow;
+				background-color: navy; 
+				padding: 10px;
+				font-size: 18pt;
+				font-weight: normal;
+			}
+			
+			h2 {
+				color: navy;
+				font-size: 14pt;
+				font-weight: normal;
+			}
+			
+			th {
+				border-bottom: 1px solid #ccc;
+				text-align: left;
+				font-size: 10pt;
+				font-weight: bold;
+				background-color: ccd;
+				border-left: 1px solid #99a;
+			}
+			
+			td {
+				font-size: 8pt;
+				border-left: 1px solid #ccc;
+				border-bottom: 1px solid #ccc;
+			}
+			
+			#body {
+				margin: 10px;
+			}
+			
+			.assembly-alt1 {
+				background-color: #77a;
+				color: white;
+				border-bottom: 1px solid #77a !important;
+				font-size: 7pt;
+			}
+			
+			.assembly-alt2 {
+				background-color: #669;
+				color: white;
+				border-bottom: 1px solid #669;
+				font-size: 7pt;
+			}
+			
+			.row-alt1 { background-color: white; }
+			.row-alt2 { background-color: #eee; }
+			
+			/* .newdllrow td { border-bottom: 2px solid #669; } */
+			
+			.module-title-alt1 { background-color: #efe; }
+			.module-title-alt2 { background-color: #ded; }
+			
+			.module-code-alt1 { background-color: #ffe; }
+			.module-code-alt2 { background-color: #eed; }
+			
+			.diagram-cell { border: 1px solid #ccc; }
+		</style>
+		<title>Sprocket System Information</title>
+	</head>
+	<body>
+		<h1>Sprocket System Information</h1>
+		<div id="body">
+			<h2>Registered Modules:</h2>
+			<table border="0" cellpadding="4" cellspacing="0">
+				{modules}
+				<tr><th colspan="6">Module Dependency Diagram</th></tr>
+				<tr><td colspan="6" class="diagram-cell"><img src="module-hierarchy-diagram.gif" alt="Module Hierarchy Diagram" /></td></tr>
+			</table>
+		</div>
+	</body>
+</html>

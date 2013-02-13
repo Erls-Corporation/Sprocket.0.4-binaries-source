@@ -1,0 +1,9 @@
+#region Definitions for [classname]
+
+event InterruptableEventHandler<[classname]> OnBeforeDelete[classname];
+event NotificationEventHandler<[classname]> On[classname]Deleted;
+Result Store([classname] [lesserclassname]);
+Result Delete([classname] [lesserclassname]);
+[classname] Select[classname]([classidfieldtype] id);
+
+#endregion

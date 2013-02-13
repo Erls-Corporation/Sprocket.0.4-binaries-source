@@ -1,0 +1,21 @@
+
+		#region JSON Methods
+		
+		/// <summary>
+		/// Writes this entity out as a JSON formatted string
+		/// </summary>
+		public void WriteJSON(StringWriter writer)
+		{
+			writer.Write("{");
+			[json-writes]
+			writer.Write("}");
+		}
+		
+		public void LoadJSON(object json)
+		{
+			Dictionary<string, object> values = json as Dictionary<string, object>;
+			if(values == null) return;
+			[json-reads]
+		}
+		
+		#endregion

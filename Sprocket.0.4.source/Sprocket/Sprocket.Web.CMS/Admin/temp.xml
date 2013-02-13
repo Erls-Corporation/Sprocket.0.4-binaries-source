@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XmlEditMap>
+	<Editable>
+		<XmlNode AllowMultiple="no">
+			<XPath>/Content/Title</XPath>
+			<EditLabel>Page Title</EditLabel>
+			<Field Type="Input.Text" MaxLength="200" EncodeOutput="yes" />
+		</XmlNode>
+	</Editable>
+</XmlEditMap>

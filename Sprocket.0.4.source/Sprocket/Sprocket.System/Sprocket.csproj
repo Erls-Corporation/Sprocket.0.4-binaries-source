@@ -1,0 +1,173 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CD7033E9-1953-4E97-B353-9F9A250B8C69}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>
+    </ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>Sprocket</AssemblyName>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Sprocket</RootNamespace>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>false</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Data.SQLite, Version=1.0.35.1, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Binary Dependencies\System.Data.SQLite.DLL</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web">
+      <Name>System.Web</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Core.cs" />
+    <Compile Include="Data\IEntity.cs" />
+    <Compile Include="Data\SQLite\SQLiteDatabase.cs" />
+    <Compile Include="Data\SqlServer2005\SqlServer2005Database.cs" />
+    <Compile Include="HandleFlag.cs" />
+    <Compile Include="Mail\EmailHandler.cs" />
+    <Compile Include="ModuleHandler.cs" />
+    <Compile Include="Data\DatabaseManager.cs" />
+    <Compile Include="Data\IDatabaseHandler.cs" />
+    <Compile Include="Utility\Crypto.cs" />
+    <Compile Include="Utility\HexEncoding.cs" />
+    <Compile Include="Utility\ResourceLoader.cs" />
+    <Compile Include="Utility\Utilities.cs" />
+    <Compile Include="Utility\Validator.cs" />
+    <Compile Include="Web\AjaxException.cs" />
+    <Compile Include="Web\AjaxHandler.cs" />
+    <Compile Include="Web\AjaxJavaScript.cs" />
+    <Compile Include="Web\ContentCache.cs" />
+    <Compile Include="Web\Controls\AjaxForm\AjaxForm.cs" />
+    <Compile Include="Web\Controls\AjaxForm\AjaxFormField.cs" />
+    <Compile Include="Web\Controls\MultiPageNav.cs" />
+    <Compile Include="Web\Controls\WebControls.cs" />
+    <Compile Include="SprocketDate.cs" />
+    <Compile Include="Web\DatabaseSetup.cs" />
+    <Compile Include="Web\JavaScriptCondenser.cs" />
+    <Compile Include="Web\JSONParser.cs" />
+    <Compile Include="Web\LogFile.cs" />
+    <Compile Include="Web\RankedObject.cs" />
+    <Compile Include="Web\SprocketPath.cs" />
+    <Compile Include="Web\SysInfo.cs" />
+    <Compile Include="Web\TestModule.cs" />
+    <Compile Include="Web\WebAuthentication.cs" />
+    <Compile Include="Web\WebClientScripts.cs" />
+    <Compile Include="Web\WebEventsModule.cs" />
+    <Compile Include="Web\WebInitialiserHttpModule.cs" />
+    <Compile Include="Web\WebUtility.cs" />
+    <Compile Include="SystemEvents.cs" />
+    <Compile Include="Web\CurrentRequest.cs" />
+    <Compile Include="ISprocketModule.cs" />
+    <Compile Include="ModuleAttributes.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Result.cs" />
+    <Compile Include="SprocketEventHandlers.cs" />
+    <Compile Include="SprocketException.cs" />
+    <Compile Include="Settings.cs" />
+    <Compile Include="StateChangingEventArgs.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Web\html\errorpage.htm" />
+    <EmbeddedResource Include="Web\html\sysinfo.htm" />
+    <EmbeddedResource Include="Web\javascript\ajax.js" />
+    <EmbeddedResource Include="Web\javascript\browser-tools.js" />
+    <EmbeddedResource Include="Web\javascript\generic.js" />
+    <EmbeddedResource Include="Web\javascript\json.js" />
+    <EmbeddedResource Include="Web\javascript\stack.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Data\SqlServer2005\scripts.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Web\Controls\AjaxForm\AjaxForm.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Web\Controls\opacity.js" />
+    <EmbeddedResource Include="Web\Controls\splitter.js" />
+    <EmbeddedResource Include="Web\Controls\tabstrip.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

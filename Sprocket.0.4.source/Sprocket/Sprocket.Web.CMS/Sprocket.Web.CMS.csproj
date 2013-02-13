@@ -1,0 +1,111 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8BE3F644-9B56-4D93-9FE8-797CE35061AE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Sprocket.Web.CMS</RootNamespace>
+    <AssemblyName>Sprocket.Web.CMS</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Admin\AdminInterfaceSections.cs" />
+    <Compile Include="Admin\AdminWindow.cs" />
+    <Compile Include="Admin\Admin.cs" />
+    <Compile Include="Admin\Interfaces.cs" />
+    <Compile Include="Content\ContentManager.cs" />
+    <Compile Include="Content\PagesAdminMenuItem.cs" />
+    <Compile Include="Content\Script Extensions\AjaxScriptsExpression.cs" />
+    <Compile Include="Content\Script Extensions\PageExpression.cs" />
+    <Compile Include="Content\Script Extensions\PathExpression.cs" />
+    <Compile Include="Content\PageEntry.cs" />
+    <Compile Include="Content\Script Extensions\QueryStringExpression.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Content\Script Extensions\RequestSpeedExpression.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Content\Script Extensions\TemplateExpression.cs" />
+    <Compile Include="Content\Script Extensions\UtilityExpressions.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Content\Template.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Script\ExecutionState.cs" />
+    <Compile Include="Script\Enumerations.cs" />
+    <Compile Include="Script\Expressions\ArgumentsOf.cs" />
+    <Compile Include="Script\Expressions\PropertyOf.cs" />
+    <Compile Include="Script\SystemTypeEvaluator.cs" />
+    <Compile Include="Script\TokenList.cs" />
+    <Compile Include="Script\Token.cs" />
+    <Compile Include="Script\ExpressionArgument.cs" />
+    <Compile Include="Script\Exceptions.cs" />
+    <Compile Include="Script\Expressions\BinaryExpressions.cs" />
+    <Compile Include="Script\Expressions\Boolean.cs" />
+    <Compile Include="Script\Expressions\Not.cs" />
+    <Compile Include="Script\Expressions\String.cs" />
+    <Compile Include="Script\Expressions\Numeric.cs" />
+    <Compile Include="Script\Expressions\Variable.cs" />
+    <Compile Include="Script\Instructions\List Each.cs" />
+    <Compile Include="Script\Instructions\While.cs" />
+    <Compile Include="Script\Instructions\Set.cs" />
+    <Compile Include="Script\Instructions\If.cs" />
+    <Compile Include="Script\Instructions\Show.cs" />
+    <Compile Include="Script\Instructions\Section.cs" />
+    <Compile Include="Script\Interfaces.cs" />
+    <Compile Include="Script\SprocketScript.cs" />
+    <Compile Include="Script\Tokeniser.cs" />
+    <Compile Include="Script\TokenParser.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Sprocket.System\Sprocket.csproj">
+      <Project>{CD7033E9-1953-4E97-B353-9F9A250B8C69}</Project>
+      <Name>Sprocket</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Admin\new-admin.txt" />
+    <EmbeddedResource Include="Content\404.htm" />
+    <Content Include="Admin\temp.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\SqlServer2005\schema.sql" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

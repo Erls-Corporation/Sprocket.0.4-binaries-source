@@ -1,0 +1,16 @@
+admin needs to be changed to a translucent floating window that is always present
+if you have admin privileges. The window normally stays collapsed in the top left
+corner but can be expanded out and moved around.
+
+<script>
+var allFloatingWindows = [];
+function CreateFloatingWindow() {
+	var win = new FloatingWindow();
+	
+}
+function FloatingWindow(id) {
+	var html = '<div id="' + id + '">
+}
+</script>
+
+

@@ -1,0 +1,53 @@
+		#region Expression Methods
+		private PropertyType propertyType = PropertyType.None;
+		private List<FunctionArgument> args = null;
+
+		public bool PresetPropertyName(Token propertyToken, List<Token> tokens, ref int nextIndex)
+		{
+			switch (propertyToken.Value)
+			{
+				[prepareproperty_casestatements]
+				default: return false;
+			}
+		}
+
+		public void SetFunctionArguments(List<FunctionArgument> arguments, Token functionCallToken)
+		{
+			args = arguments;
+		}
+
+		public object Evaluate(ExecutionState state)
+		{
+			switch(propertyType)
+			{
+				[evaluate_casestatements]
+				case PropertyType.None: return this;
+				default: return "[[classname]]";
+			}
+		}
+
+		public void PrepareExpression(Token expressionToken, List<Token> tokens, ref int nextIndex, Stack<int?> precedenceStack)
+		{
+		}
+
+		public object EvaluateVariableProperty(string propertyName, Token propertyToken, ExecutionState state)
+		{
+			switch(propertyName)
+			{
+				[evaluateproperty_casestatements]
+				default:
+					throw new InstructionExecutionException("\"" + propertyName + "\" is not a property of this variable.", propertyToken);
+			}
+		}
+
+		enum PropertyType
+		{
+			None[propertytypes]
+		}
+
+		public class [classname]ExpressionCreator : IExpressionCreator
+		{
+			public string Keyword { get { return "[classname_lower]"; } }
+			public IExpression Create() { return new [classname](); }
+		}
+		#endregion

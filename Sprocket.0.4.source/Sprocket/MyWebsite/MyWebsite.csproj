@@ -1,0 +1,69 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F4D4A03B-2FCB-4E79-B9A3-0436BE26B115}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MyWebsite</RootNamespace>
+    <AssemblyName>MyWebsite</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MyWebsiteHandler.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Sprocket.Security\Sprocket.Security.csproj">
+      <Project>{C4A4A15A-4756-4AF2-8F5D-E246B04265E2}</Project>
+      <Name>Sprocket.Security</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sprocket.System\Sprocket.csproj">
+      <Project>{CD7033E9-1953-4E97-B353-9F9A250B8C69}</Project>
+      <Name>Sprocket</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sprocket.Web.CMS\Sprocket.Web.CMS.csproj">
+      <Project>{8BE3F644-9B56-4D93-9FE8-797CE35061AE}</Project>
+      <Name>Sprocket.Web.CMS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sprocket.Web.FileManager\Sprocket.Web.FileManager.csproj">
+      <Project>{E8DB933F-621D-4980-8BE7-B7AAAFE705FC}</Project>
+      <Name>Sprocket.Web.FileManager</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sprocket.Web.Forum\Sprocket.Web.Forums.csproj">
+      <Project>{9237A1BB-DA34-4666-A50D-D92B03136327}</Project>
+      <Name>Sprocket.Web.Forums</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

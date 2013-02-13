@@ -1,0 +1,80 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{21B39069-FFD1-4FE5-92A2-76D8BFE0C9A6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Sprocket.Web.Merchant</RootNamespace>
+    <AssemblyName>Sprocket.Web.Merchant</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="PayPal\BuyerInformation.cs" />
+    <Compile Include="PayPal\InstantPaymentNotification.cs" />
+    <Compile Include="PayPal\PayPalPlaceHolderRenderer.cs" />
+    <Compile Include="PayPal\PaypalSubscription.cs" />
+    <Compile Include="PayPal\PayPalTransactionResponse.cs" />
+    <Compile Include="PayPal\PaymentDataTransfer.cs" />
+    <Compile Include="PayPal\enums.cs" />
+    <Compile Include="PayPal\PayPal.cs" />
+    <Compile Include="PayPal\PayPalTransactionResponse.Entity.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Sprocket.Data\Sprocket.Data.csproj">
+      <Project>{903AD3DC-FA63-4C6C-9D1F-A80B50A19E4E}</Project>
+      <Name>Sprocket.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sprocket.System\Sprocket.csproj">
+      <Project>{CD7033E9-1953-4E97-B353-9F9A250B8C69}</Project>
+      <Name>Sprocket.System</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sprocket.Web.CMS.Pages\Sprocket.Web.CMS.Pages.csproj">
+      <Project>{08E2E62C-7B42-4313-85C5-5F7A283A82F2}</Project>
+      <Name>Sprocket.Web.CMS.Pages</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sprocket.Web\Sprocket.Web.csproj">
+      <Project>{10CE83A9-2E6D-4972-8486-D380816C7027}</Project>
+      <Name>Sprocket.Web</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="PayPal\Database\tables.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="PayPal\Database\procs.sql" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

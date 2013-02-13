@@ -1,0 +1,114 @@
+#security-interface input.textfield {
+	line-height: 10pt;
+	height: 10pt;
+}
+#security-interface div.dividegap {
+	line-height: 4px;
+	height: 4px;
+	font-size: 4px;
+}
+#security-menu {
+	border-bottom: 1px solid #eee;
+	padding-bottom: 4px;
+	margin-bottom: 4px;
+}
+#security-filter {
+	float: left;
+	background-image: url(images/lightbackground.gif);
+	padding: 10px 10px 10px 10px;
+	width: 205px;
+	border-right: 1px solid #bac797;
+	border-bottom: 1px solid #bac797;
+}
+#security-filter-display {
+	margin-top: 4px;
+}
+#security-filter span.label {
+	display: block;
+	float: left;
+	width: 73px;
+	padding-top: 2px;
+}
+#security-filter div.filteroption {
+	margin-bottom: 2px;
+}
+#security-filter input.textfield {
+	width: 123px;
+}
+#security-filter-results {
+	margin-left: 236px;
+	padding: 4px 10px 10px 0;
+}
+#security-filter-results .important {
+	font-weight: bold;
+}
+#security-filter-results .result {
+	white-space: nowrap;
+}
+#security-filter-results .resultdelimiter {
+}
+#security-editform-user .heading {
+	background-color: #eee;
+	font-weight: bold;
+	color: #06c;
+	padding: 2px 8px 2px 8px;
+	margin-right: 2px;
+	border-top: 1px solid #ccc;
+	border-left: 1px solid #ccc;
+	border-right: 1px solid #ccc;
+}
+#security-editform-user-form {
+	background-color: #eee;
+	padding: 8px 0 0 8px;
+	height: 1%;
+	border: 1px solid #ccc;
+}
+#security-editform-user .formfield {
+	height: 15.7pt;
+}
+#security-editform-user-form .error {
+	color: Red;
+	font-weight: bold;
+	margin-left: 6px;
+}
+#security-editform-user .label {
+	display: block;
+	float: left;
+	width: 100px;
+	font-weight: bold;
+}
+#security-edituser .ajaxform {
+	border-bottom: 4px solid #6e7765;
+	display: block;
+}
+#security-editform-user-form .formfield input.textfield {
+	width: 14.7em;
+}
+#security-rolelist {
+	margin-left: expression('16pt');
+	padding-left: 16pt;
+	padding-left: expression('0');
+}
+#security-link-createrole {
+	font-weight: bold;
+	margin-bottom: 4px;
+}
+#security-rolelist {
+	float: left;
+}
+#security-permissionlist {
+	margin-left: 180px;
+	border-left: 2px solid #d9e3bd;
+}
+#security-permissionlist .ajaxform {
+}
+
+#fieldrow-Password input {
+	width: 7em !important;
+}
+#fieldcell-SaveUserDisabled {
+	color: #999;
+}
+#fieldcell-DeleteUserDisabled {
+	color: #999;
+}
